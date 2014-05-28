@@ -18,10 +18,10 @@ function hot_secondary_touts_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'icon_field',
         'settings' => array(
-          'link_to_content' => FALSE,
+          'link_to_content' => 0,
         ),
         'type' => 'icon_field_default',
         'weight' => 2,
@@ -53,7 +53,7 @@ function hot_secondary_touts_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -105,7 +105,7 @@ function hot_secondary_touts_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'list',
         'settings' => array(),
         'type' => 'list_default',

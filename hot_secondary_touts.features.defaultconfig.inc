@@ -49,10 +49,10 @@ function hot_secondary_touts_defaultconfig_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'icon_field',
           'settings' => array(
-            'link_to_content' => FALSE,
+            'link_to_content' => 0,
           ),
           'type' => 'icon_field_default',
           'weight' => 2,
@@ -114,7 +114,7 @@ function hot_secondary_touts_defaultconfig_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'link',
           'settings' => array(),
           'type' => 'link_default',
@@ -195,7 +195,7 @@ function hot_secondary_touts_defaultconfig_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
@@ -239,14 +239,31 @@ function hot_secondary_touts_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__hot_secondary_touts';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '0',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'title' => array(
+          'default' => array(
+            'weight' => '-5',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_fieldable_panels_pane__hot_secondary_touts'] = $strongarm;
