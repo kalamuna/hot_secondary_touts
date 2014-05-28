@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ *
+ */
+
+
+/**
+ * Implementation of hook_entity_info_alter()
+ */
+function hot_secondary_touts_entity_info_alter(&$entity_info) {
+  // Fieldable panel pane bundle to support call-to-action
+  $entity_info['fieldable_panels_pane']['bundles']['hot_secondary_touts'] = array(
+    'label' => t('Secondary Tout'),
+    'pane category' => t('HotWidgets!'),
+    'pane top level' => FALSE,
+    'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_image.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/hot_secondary_touts',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
